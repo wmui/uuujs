@@ -1,4 +1,3 @@
-
 module.exports = function (url, callback) {
     const scripts = Array.from(document.querySelectorAll('script'));
     let hasUrl = false;

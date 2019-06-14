@@ -5,15 +5,32 @@ const rm = require('rimraf')
 const chalk = require('chalk')
 const copy = require('copy')
 const webpack = require('webpack')
-
-const config = require('./webpack.conf')
 const rootPath = path.resolve(__dirname, '../')
 
 let building = ora('building...')
 building.start()
 rm(path.resolve(rootPath, 'dist', `*.js`), err => {
     if (err) throw (err)
-    webpack(config, function (err, stats) {
+    webpack({
+        mode: 'production',
+        entry: path.resolve(rootPath, 'src', 'index.js'),
+        output: {
+            filename: 'uuu.min.js',
+            path: path.resolve(rootPath, 'dist'),
+            library: 'uuu',
+            libraryTarget: "umd",
+            globalObject: "this"
+        },
+        module: {
+            rules: [{
+                test: /\.js$/,
+                loader: "babel-loader",
+                options: {
+                    presets: ['env'],
+                }
+            }]
+        }
+    }, function (err, stats) {
         if (err) throw (err)
         process.stdout.write(stats.toString({
             colors: true,
