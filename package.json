@@ -1,6 +1,6 @@
 {
   "name": "uuujs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "utils",
   "main": "dist/uuu.min.js",
   "scripts": {
@@ -37,6 +37,7 @@
     "webpack": "^4.34.0"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "lodash": "^4.17.11",
     "outils": "^1.5.0"
   }
