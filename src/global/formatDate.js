@@ -1,4 +1,4 @@
-module.exports = function(timestamp, format) {
+function formatDate(timestamp, format) {
     const date = new Date(timestamp)
     const padLeftZero = function (str) {
         return ('00' + str).substring(str.length);
@@ -22,3 +22,5 @@ module.exports = function(timestamp, format) {
     }
     return format;
 };
+
+module.exports = formatDate

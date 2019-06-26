@@ -1,4 +1,4 @@
-module.exports = function () {
+function getExplore() {
     const sys = {};
     const ua = navigator.userAgent.toLowerCase();
     let s;
@@ -18,3 +18,5 @@ module.exports = function () {
     if (sys.safari) return ('safari:' + sys.safari)
     return 'unkonwn'
 }
+
+module.exports = getExplore

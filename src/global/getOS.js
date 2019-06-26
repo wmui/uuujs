@@ -1,4 +1,4 @@
-module.exports = function () {
+function getOS() {
     const userAgent = 'navigator' in window && 'userAgent' in navigator && navigator.userAgent.toLowerCase() || '';
     const appVersion = 'navigator' in window && 'appVersion' in navigator && navigator.appVersion.toLowerCase() || '';
 
@@ -9,3 +9,4 @@ module.exports = function () {
     if (/win/i.test(appVersion)) return 'windows'
     if (/linux/i.test(appVersion)) return 'linux'
 }
+module.exports = getOS

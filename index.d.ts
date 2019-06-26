@@ -30,6 +30,12 @@ declare namespace uuu {
     export function debounce(method: () => void, context = window): void
 
     /**
+     * 支持常见数据类型的深拷贝(Array、Object、Date、其他原始类型数据)
+     * @param data 深拷贝数据
+     */
+    export function deepClone(data: any): any
+
+    /**
      * 时间格式化
      * @param timestamp 时间戳
      * @param format 时间格式：yyyy-MM-dd hh:mm:ss。分隔符可以自定义
@@ -60,16 +66,24 @@ declare namespace uuu {
      */
     export function getOS():string
 
+
+    /**
+     * 把函数包装为单例模式
+     * @param method 函数
+     */
+    export function getSingle(method): function
+
     /**
      * 获取指定范围的随机数
      * @param min 最小值
      * @param max 最大值
      */
+
     export function getRandom(min: number, max: number): number
 
 
     /**
-     * 获取数据类型，可能的值：String Number Boolean Null Undefined Object Symbol Function Array Date RegExp Error HTMLDocument Window
+     * 获取数据类型，可能的值：String Number Boolean Null Undefined Object Symbol Function Array Date RegExp Error HTMLDocument Window Set Map
      */
     export function getType(data: any): string
 
@@ -81,11 +95,25 @@ declare namespace uuu {
     export function hasClass(element: HTMLElement, cls: string): boolean
 
     /**
+     * 判断是否是空数据（
+     * true值：[]、{}、new Set()、new Map()、null、undefined、''
+     * false值：0、false
+     * @param data 数据值
+     */
+    export function isEmpty(data: any): boolean
+
+    /**
      * jsonp请求
      * @param url jsonp地址
      * @param data 附加的data参数
      */
     export function jsonp(url: URL, data?: object): promise
+
+    /**
+     * 获取元素距离document的绝对距离
+     * @param element DOM元素
+     */
+    export function offset(element: HTMLElement): {left: number, top: number}
 
     /**
      * 解析url
@@ -114,6 +142,13 @@ declare namespace uuu {
      */
     export function setCookie(name: string, value: string, days: number): void
 
+    /**
+     * 向剪切板添加数据
+     * @param text 添加到剪切板的文本数据
+     * @param callback 复制成功后的回调函数
+     */
+
+    export function setClipboardData(text: string, callback?: () => void): void
     /**
      * 对函数进行节流处理
      * @param method 要节流处理的函数

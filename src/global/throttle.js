@@ -1,4 +1,4 @@
-module.exports = function (method, context) {
+function throttle(method, context) {
     if (method.tId) { // 忽略新函数
         return false;
     }
@@ -9,3 +9,5 @@ module.exports = function (method, context) {
         method.call(context || window)
     }, 500)
 }
+
+module.exports = throttle

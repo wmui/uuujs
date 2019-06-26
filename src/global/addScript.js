@@ -1,4 +1,4 @@
-module.exports = function (url, callback) {
+function addScript(url, callback) {
     const scripts = Array.from(document.querySelectorAll('script'));
     let hasUrl = false;
     for (const item of scripts) {
@@ -15,3 +15,5 @@ module.exports = function (url, callback) {
         document.body.appendChild(script);
     }
 }
+
+module.exports = addScript

@@ -2,7 +2,7 @@
 /**
  * 只适用于浏览器环境，Node环境可以直接引用URL模块
  */
-module.exports = function (url) {
+function parseUrl(url) {
     let a = document.createElement('a');
     a.href = url;
     return {
@@ -33,3 +33,5 @@ module.exports = function (url) {
         segments: a.pathname.replace(/^\//, '').split('/')
     };
 }
+
+module.exports = parseUrl

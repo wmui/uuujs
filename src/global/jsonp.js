@@ -2,7 +2,7 @@
  * 后端需要根据callback的值包裹要返回的数据
  */
 
-module.exports = function (url, data) {
+ function jsonp(url, data) {
     return new Promise((resolve, reject) => {
         let dataString = url.indexOf('?') === -1 ? '?' : '&';
         let callbackName = `jsonpCB_${Date.now()}`;
@@ -32,3 +32,5 @@ module.exports = function (url, data) {
         document.body.appendChild(jsNode);
     })
 }
+
+module.exports = jsonp
