@@ -1,4 +1,4 @@
-declare namespace uuu {
+declare namespace uuujs {
     /**
      * 添加Class
      * @param element DOM元素
@@ -159,6 +159,6 @@ declare namespace uuu {
 }
 
 
-declare module 'uuu' {
-    export = uuu
+declare module 'uuujs' {
+    export = uuujs
 }
