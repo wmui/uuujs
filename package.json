@@ -9,9 +9,10 @@
     "build": "node script/build.js",
     "build-pack": "node script/build-pack.js",
     "build-copy": "node script/build-copy.js",
-    "test": "npm run build && nodemon --watch ./test --exec mocha",
+    "test": "mocha",
+    "test-watch": "nodemon --watch ./test --exec mocha",
     "cover": "istanbul cover _mocha",
-    "release": "npm run cover && npm run build && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags"
+    "release": "npm run test && npm run cover && npm run build && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags"
   },
   "repository": {
     "type": "git",
