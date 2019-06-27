@@ -1,5 +1,5 @@
 function offset(element) {
-    let pos = {
+    var pos = {
         left: 0,
         top: 0,
     }

@@ -183,9 +183,9 @@ var Tween = {
  * name 动画名字
  * callback 每帧结束后的回掉函数，返回当前的位置
  */
-const animation = function (options = {}, callback = () => { }) {
+var animation = function (options = {}, callback = () => { }) {
 
-    const { from = 0, to = 0, duration = 300, name = 'Linear' } = options
+    var { from = 0, to = 0, duration = 300, name = 'Linear' } = options
     if (!window.requestAnimationFrame) {
         window.requestAnimationFrame = function (fn) {
             return setTimeout(fn, 17)

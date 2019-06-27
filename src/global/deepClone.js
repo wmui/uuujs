@@ -1,5 +1,5 @@
 function deepClone(values) {
-    let copy;
+    var copy;
 
     // Handle the 3 simple types, and null or undefined
     if (null == values || "object" != typeof values) return values;
@@ -14,7 +14,7 @@ function deepClone(values) {
     // Handle Array
     if (values instanceof Array) {
         copy = [];
-        for (let i = 0, len = values.length; i < len; i++) {
+        for (var i = 0, len = values.length; i < len; i++) {
             copy[i] = deepClone(values[i]);
         }
         return copy;
@@ -23,7 +23,7 @@ function deepClone(values) {
     // Handle Object
     if (values instanceof Object) {
         copy = {};
-        for (let attr in values) {
+        for (var attr in values) {
             if (values.hasOwnProperty(attr)) copy[attr] = deepClone(values[attr]);
         }
         return copy;

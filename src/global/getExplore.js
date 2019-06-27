@@ -1,7 +1,7 @@
 function getExplore() {
-    const sys = {};
-    const ua = navigator.userAgent.toLowerCase();
-    let s;
+    var sys = {};
+    var ua = navigator.userAgent.toLowerCase();
+    var s;
     (s = ua.match(/rv:([\d.]+)\) like gecko/)) ? sys.ie = s[1]:
         (s = ua.match(/msie ([\d\.]+)/)) ? sys.ie = s[1] :
         (s = ua.match(/edge\/([\d\.]+)/)) ? sys.edge = s[1] :

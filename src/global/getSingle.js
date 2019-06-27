@@ -1,5 +1,5 @@
 function getSingle(method) {
-    let result;
+    var result;
     return function () {
         return result || (result = method(arguments));
     }

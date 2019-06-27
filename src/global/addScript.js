@@ -1,12 +1,12 @@
 function addScript(url, callback) {
-    const scripts = Array.from(document.querySelectorAll('script'));
-    let hasUrl = false;
-    for (const item of scripts) {
-        const src = item.getAttribute('src');
+    var scripts = Array.from(document.querySelectorAll('script'));
+    var hasUrl = false;
+    for (var item of scripts) {
+        var src = item.getAttribute('src');
         if(src === url) hasUrl = true;
     }
     if(!hasUrl) {
-        const script = document.createElement('script');
+        var script = document.createElement('script');
         script.src = url;
         if(callback) {
 

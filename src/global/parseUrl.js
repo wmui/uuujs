@@ -3,7 +3,7 @@
  * 只适用于浏览器环境，Node环境可以直接引用URL模块
  */
 function parseUrl(url) {
-    let a = document.createElement('a');
+    var a = document.createElement('a');
     a.href = url;
     return {
         source: url,
@@ -12,7 +12,7 @@ function parseUrl(url) {
         port: a.port,
         query: a.search,
         params: (function () {
-            let ret = {},
+            var ret = {},
                 seg = a.search.replace(/^\?/, '').split('&'),
                 len = seg.length,
                 i = 0,
