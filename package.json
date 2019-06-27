@@ -1,8 +1,9 @@
 {
   "name": "uuujs",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "utils",
   "main": "dist/uuu.min.js",
+  "types": "index.d.ts",
   "scripts": {
     "dev": "nodemon --watch ./src --exec node script/build.js",
     "build": "node script/build.js",
@@ -35,10 +36,5 @@
     "require-all": "^3.0.0",
     "rimraf": "^2.6.3",
     "webpack": "^4.34.0"
-  },
-  "dependencies": {
-    "express": "^4.17.1",
-    "lodash": "^4.17.11",
-    "outils": "^1.5.0"
   }
 }
