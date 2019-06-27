@@ -1,6 +1,6 @@
 {
   "name": "uuujs",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "utils",
   "main": "dist/uuu.min.js",
   "types": "index.d.ts",
@@ -12,7 +12,7 @@
     "test": "mocha",
     "test-watch": "nodemon --watch ./test --exec mocha",
     "cover": "istanbul cover _mocha",
-    "release": "npm run test && npm run cover && npm run build && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags"
+    "release": "npm run test && npm run cover && npm run build-pack && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags"
   },
   "repository": {
     "type": "git",
