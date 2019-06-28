@@ -25,23 +25,25 @@ uuujs支持在浏览器环境和node环境中使用
 或者
 
 ```js
+// 全部引入
 import uuu from 'uuujs';
 
-console.log(uuu.getType({})); // Object
+// 按需引入
+import getType from 'uuujs/getType';
 ```
 
 ### Node环境
 
 ```js
-// 完整引入
+// 全部引入
 const uuu = require('uuujs');
 
-// 部分引入
+// 按需引入
 const getType = require('uuujs/getType');
 ```
 
 ## TS支持
 
-已添加类型声明文件，函数都有详细注释
+已添加类型声明文件，函数有详细注释
 
-**注意：** 函数的测试用例还在不断添加中，争取覆盖率做到80%以上
+**注意：** 函数的测试用例还在不断添加中

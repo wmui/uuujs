@@ -7,7 +7,7 @@ const copy = require('copy')
 const webpack = require('webpack')
 const rootPath = path.resolve(__dirname, '../')
 
-let copying = ora('copying...')
+let building = ora('copying...')
 copying.start()
 rm(path.resolve(rootPath, 'dist/copy', `*.js`), err => {
     if (err) throw (err)

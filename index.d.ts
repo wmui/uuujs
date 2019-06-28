@@ -23,6 +23,20 @@ declare namespace uuujs {
     export function animation(from: number, to: number, name: string, callback: (currentPosition: number, isEnd: boolean) => void)
 
     /**
+     * 按照size把数组分割成二维数组
+     * @param array 原始数组
+     * @param size 二维数组的大小
+     */
+    export function chunk(array: any[], size: number): array
+
+    /**
+     * 提取对象到一个数组中
+     * @param array 对象数组
+     * @param str 数组中对象的字段名
+     */
+
+    export function flatArray(array: any[], str): array
+    /**
      * 对函数进行防抖处理
      * @param method 要防抖的函数
      * @param context 绑定上下文
@@ -78,7 +92,6 @@ declare namespace uuujs {
      * @param min 最小值
      * @param max 最大值
      */
-
     export function getRandom(min: number, max: number): number
 
 

@@ -4,6 +4,7 @@
   "description": "utils",
   "main": "dist/uuu.min.js",
   "types": "index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "dev": "nodemon --watch ./src --exec node script/build-pack.js",
     "build": "node script/build.js",
