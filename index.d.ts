@@ -27,7 +27,7 @@ declare namespace uuujs {
      * @param array 原始数组
      * @param size 二维数组的大小
      */
-    export function chunk(array: any[], size: number): array
+    export function chunk(array: any[], size: number): any[]
 
     /**
      * 提取对象到一个数组中
@@ -35,13 +35,13 @@ declare namespace uuujs {
      * @param str 数组中对象的字段名
      */
 
-    export function flatArray(array: any[], str): array
+    export function flatArray(array: any[], str): any[]
     /**
      * 对函数进行防抖处理
      * @param method 要防抖的函数
      * @param context 绑定上下文
      */
-    export function debounce(method: () => void, context = window): void
+    export function debounce(method: () => void, context?: any): void
 
     /**
      * 支持常见数据类型的深拷贝(Array、Object、Date、其他原始类型数据)
@@ -62,7 +62,7 @@ declare namespace uuujs {
      * @param path 对象的路径
      * @param defaultValue 属性不存在时返回的默认值，默认是undefined
      */
-    export function get(obj: object, path: string, defaultValue:any = undefined): any
+    export function get(obj: object, path: string, defaultValue:any): any
 
     /**
      * 获取cookie值，默认返回空字符串
@@ -78,14 +78,14 @@ declare namespace uuujs {
     /**
      * 获取操作系统名称，可能值：mac、windows、linux、android、ios、windowsPhone
      */
-    export function getOS():string
+    export function getOS(): string
 
 
     /**
      * 把函数包装为单例模式
      * @param method 函数
      */
-    export function getSingle(method): function
+    export function getSingle(method): Function
 
     /**
      * 获取指定范围的随机数
@@ -120,7 +120,7 @@ declare namespace uuujs {
      * @param url jsonp地址
      * @param data 附加的data参数
      */
-    export function jsonp(url: URL, data?: object): promise
+    export function jsonp(url: URL, data?: object): Promise<any>
 
     /**
      * 获取元素距离document的绝对距离
@@ -167,7 +167,7 @@ declare namespace uuujs {
      * @param method 要节流处理的函数
      * @param context 绑定的上下文环境，默认window
      */
-    export function throttle(method: () => void, context = window): void
+    export function throttle(method: () => void, context?: any): void
 
 }
 
