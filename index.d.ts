@@ -85,7 +85,7 @@ declare namespace uuujs {
      * 把函数包装为单例模式
      * @param method 函数
      */
-    export function getSingle(method): Function
+    export function getSingle(method): () => any
 
     /**
      * 获取指定范围的随机数
