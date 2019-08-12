@@ -4,7 +4,6 @@ const ora = require('ora')
 const rm = require('rimraf')
 const chalk = require('chalk')
 const copy = require('copy')
-const webpack = require('webpack')
 const rootPath = path.resolve(__dirname, '../')
 
 let copying = ora('copying...')

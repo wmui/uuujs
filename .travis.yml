@@ -1,26 +1,26 @@
 language: node_js
 node_js:
-  - "8"
+    - "8"
 before_install:
-- sudo apt-get install google-chrome-stable
+    - sudo apt-get install google-chrome-stable
 install:
-  - npm install
+    - npm install
 script:
-  - npm run test
+    - npm run test
 after_success:
-- cat ./coverage/lcov.info | node_modules/.bin/coveralls --verbose
-- rm -rf ./coverage
+    - cat ./coverage/lcov.info | node_modules/.bin/coveralls --verbose
+    - rm -rf ./coverage
 branches:
-  only:
-    - master
+    only:
+        - master
 before_deploy:
-  - npm run build
-  - cp ./dist/copy/* ./
-  - rm -rf ./src ./test ./coverage ./script ./.editorconfig ./dist/copy
+    - npm run build
+    - cp ./dist/copy/* ./
+    - rm -rf ./src ./test ./coverage ./script ./.editorconfig ./dist/copy
 deploy:
-  provider: npm
-  email: "$NPM_EMAIL"
-  api_key: "$NPM_TOKEN"
-  skip_cleanup: true
-  on:
-    branch: master
+    provider: npm
+    email: "$NPM_EMAIL"
+    api_key: "$NPM_TOKEN"
+    skip_cleanup: true
+    on:
+        branch: master
