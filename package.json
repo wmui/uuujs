@@ -10,9 +10,9 @@
         "build": "node script/build.js",
         "build-pack": "node script/build-pack.js",
         "build-copy": "node script/build-copy.js",
-        "test": "mocha",
-        "test-watch": "nodemon --watch ./test --exec mocha",
-        "cover": "istanbul cover _mocha",
+        "test": "jest",
+        "test-watch": "nodemon --watch ./test --exec jest",
+        "cover": "jest --coverage",
         "release": "npm run test && npm run cover && npm run build-pack && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags"
     },
     "repository": {
@@ -33,18 +33,23 @@
         "babel-core": "^6.26.3",
         "babel-loader": "^7.1.5",
         "babel-preset-env": "^1.7.0",
-        "chai": "^4.2.0",
         "chalk": "^2.4.2",
         "copy": "^0.3.2",
+        "ejs": "^2.6.2",
         "eslint": "^6.1.0",
         "istanbul": "^0.4.5",
-        "mocha": "^6.1.4",
+        "jest": "^24.9.0",
+        "jest-puppeteer": "^4.3.0",
+        "jquery": "^3.4.1",
         "nodemon": "^1.19.1",
         "ora": "^3.4.0",
+        "puppeteer": "^1.19.0",
         "rimraf": "^2.6.3",
         "webpack": "^4.34.0"
     },
     "dependencies": {
+      "@types/jest": "^24.0.18",
+        "@types/puppeteer": "^1.19.1",
         "promise": "^8.0.3"
     }
 }

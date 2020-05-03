@@ -22,20 +22,7 @@ declare namespace uuujs {
      */
     export function animation(from: number, to: number, name: string, callback: (currentPosition: number, isEnd: boolean) => void)
 
-    /**
-     * 按照size把数组分割成二维数组
-     * @param array 原始数组
-     * @param size 二维数组的大小
-     */
-    export function chunk(array: any[], size: number): any[]
 
-    /**
-     * 提取对象到一个数组中
-     * @param array 对象数组
-     * @param str 数组中对象的字段名
-     */
-
-    export function flatArray(array: any[], str): any[]
     /**
      * 对函数进行防抖处理
      * @param method 要防抖的函数
@@ -43,11 +30,6 @@ declare namespace uuujs {
      */
     export function debounce(method: () => void, context?: any): void
 
-    /**
-     * 支持常见数据类型的深拷贝(Array、Object、Date、其他原始类型数据)
-     * @param data 深拷贝数据
-     */
-    export function deepClone(data: any): any
 
     /**
      * 时间格式化
@@ -56,13 +38,6 @@ declare namespace uuujs {
      */
     export function formatDate(timestamp: number | string, format: string): string
 
-    /**
-     * 获取对象的属性值
-     * @param obj 要获取属性的对象
-     * @param path 对象的路径
-     * @param defaultValue 属性不存在时返回的默认值，默认是undefined
-     */
-    export function get(obj: object, path: string, defaultValue:any): any
 
     /**
      * 获取cookie值，默认返回空字符串
@@ -108,9 +83,9 @@ declare namespace uuujs {
     export function hasClass(element: HTMLElement, cls: string): boolean
 
     /**
-     * 判断是否是空数据（
-     * true值：[]、{}、new Set()、new Map()、null、undefined、''
-     * false值：0、false
+     * 判断是否是空数据
+     * true：[]、{}、null、undefined、''
+     * false：0、false
      * @param data 数据值
      */
     export function isEmpty(data: any): boolean
@@ -126,7 +101,7 @@ declare namespace uuujs {
      * 获取元素距离document的绝对距离
      * @param element DOM元素
      */
-    export function offset(element: HTMLElement): {left: number, top: number}
+    export function offset(element: HTMLElement): { left: number, top: number }
 
     /**
      * 解析url
@@ -139,13 +114,13 @@ declare namespace uuujs {
      * @param element DOM元素
      * @param cls 要移除的className
      */
-    export function removeClass(element: HTMLElement, cls: string):void
+    export function removeClass(element: HTMLElement, cls: string): void
 
     /**
      * 移除cookie
      * @param name cookie的键名
      */
-    export function removeCookie(name: string):void
+    export function removeCookie(name: string): void
 
     /**
      * 设置cookie
